@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body {
+        font-family: "Times New Roman", Georgia, Serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Playfair Display";
+        letter-spacing: 5px;
+      }
+
+      .center {
+          margin: auto;
+          width: 30%;
+          padding: 10px;
+          text-align:center;
+      }
+
+      .cen {
+          display: block;
+          margin-left: 35%;
+          margin-right: auto;
+          width: 50%;
+      }
+
+      input {
+          height: 36px;
+          border: 1px solid #efefef;
+          border-radius: 3px;
+          background-color: #fafafa;
+          width: 100%;
+          font-size: 12px;
+          margin: 0;
+          padding: 9px 0 7px 8px;
+          outline: none;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          box-sizing: border-box;
+      }
+
+      .tmid {
+          margin: auto;
+          width: 15%;
+          padding: 15px;
+      }
+
+      .d {
+          margin: auto;
+          width: 16%;
+          padding: 15px;
+      }
+
+      .tid {
+          margin: auto;
+          width: 30%;
+          padding: 10px;
+          text-align:center;
+      }
+
+      .indicator{
+          height: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 10px 0;
+          display: none;
+      }
+      .indicator span{
+          width: 100%;
+          height: 100%;
+          background: lightgrey;
+          border-radius: 5px;
+          position: relative;
+      }
+      .indicator span.medium{
+          margin: 0 5px;
+      }
+      .indicator span:before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+      }
+      .indicator span.active.weak:before{
+          background-color: #ff4757;
+      }
+      .indicator span.active.medium:before{
+          background-color: orange;
+      }
+      .indicator span.active.strong:before{
+          background-color: #23ad5c;
+      }
+      .answer_text{
+          font-size: 14px;
+          font-weight: 500;
+          margin-bottom: -10px;
+          display: none;
+      }
+      .answer_text.weak{
+          color: #ff4757;
+      }
+      .answer_text.medium{
+          color: orange;
+      }
+      .answer_text.strong{
+          color: #23ad5c;
+      }
+
+      .kd {
+          margin: auto;
+          width: 30%;
+          padding: 10px;
+          text-align:center;
+      }
+
+      .button1 {
+        background-color: #555555; /* Black */
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+      } 
+
+      #click{
+        display: none;
+      }
+
+      #clickme{
+        display: none;
+      }
+
+
+      .click-me {
+        display: inline;
+       /* width: 100px;
+        height: 20px;
+        background: grey;
+        border: 1px solid white;*/
+        color: grey;
+        text-align: right;
+        text-decoration: underline;
+        font-size: 11px;
+        cursor: pointer;
+       /* transition: .5s;*/
+      }
+
+      .click-me:hover{
+        text-decoration-color: green;
+      }
+
+      .content {
+        opacity: 0;
+        visibility: hidden;
+        margin: auto;
+        width: 400px;
+        height: 320px;
+        background: grey;
+        border-radius: 3px;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.4);
+        /*padding: 5px;*/
+        /*text-align: center;*/
+      }
+
+      #click:checked ~ .content{
+        opacity: 1;
+        visibility: visible;      
+      }
+
+      .header{
+        height: 50px;
+        background: white;
+        overflow: hidden;
+        border-radius: 3px 3px 0 0;
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+        text-align: center;
+      }
+
+      .header h2{
+        color: black;
+        padding-left: 32px;
+        font-weight: normal;
+      }
+
+      .fa-times-circle{
+        right: 100px;
+        top: 100px;
+      }
+
+      .p1{
+        padding-top: 20px;
+        font-size: 13px;
+        color: #1a1a1a;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
+        padding: 3px;
+      }
+
+      .p2{
+        padding-top: 10px;
+        font-size: 13px;
+        color: white;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
+      }
+
+      .line{
+        bottom: 10px;
+        width: 100%;
+        height: 1px;
+        background: silver;
+      }
+
+      .close-btn{
+        position: absolute;
+        bottom: -650px;
+        right: 430px;
+/*        border: 1px solid white;
+        border-radius: 3px;
+        color: white;
+        padding: 8px 10px;
+        font-size: 11px;*/
+        cursor: pointer;
+      }
+
+      .close-btn:hover{
+        background: grey;
+        color: white;
+        transition: .5s;
+      }
+
+      .bg-modal{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        position: relative;
+       /* position: absolute;*/
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+
+      .content-modal{
+        width: 500px;
+        height: 280px;
+        background-color: grey;
+        border-radius: 4px;
+        text-align: center;
+        /*padding: 20px;*/
+        position: relative;
+      }
+
+      .close{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 30px;
+        transform: rotate(45deg);
+        cursor: pointer;
+        color: white;
+      }
+
+      #a5{
+          text-align: center;
+      }
+
+      #category{
+          text-align: center;
+      }
+
+      .d{
+          margin: auto;
+          width: 30%;
+          padding: 10px;
+          text-align:center;
+      }
+
+      .image{
+          margin: auto;
+          width: 20%;
+          padding: 10px;
+          text-align:center;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <!-- Contact Section -->
+    <div class="w3-container w3-padding-64">
+      <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+        <br>
+        <br>
+
+        <div class="image">
+          <div class="w3-col m6 w3-padding-large w3-hide-small"><%= image_tag "security_image.png", height: 200, width: 300 %></div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="center">
+          <div class="right">
+            <input type="text" id="a1" name="fname" placeholder="FIRST NAME" style="text-align:center">
+            <input type="text" id="a2" name="fname" placeholder="LAST NAME" style="text-align:center">
+          </div>
+        </div>
+
+        <div class="center">
+          <input type="text" id="a3" name="fname" placeholder="DOB" style="text-align:center">
+        </div>
+
+        <div class="center">
+          <input type="text" id="a4" name="fname" placeholder="GENDER" style="text-align:center">
+        
+          <br>
+          <br>
+              <%= form_with url: "/home/evform", method: :post do |form| %>
+              <%= form.url_field :a5 , placeholder: "ENTER YOUR WIKIPEDIA PROFILE URL "%>
+        </div>
+        
+        <br>
+        
+        <h6 style="text-align:center">SELECT YOUR CATEGORY AND SECURITY QUESTION</h6>
+
+        <div class="tid">
+          <body onload="resetSelection()">
+            <select id="category" size="1" onchange="makeSubmenu(this.value)">
+              <option value="" disabled selected>Choose Category</option>
+              <option>WORK</option>
+              <option>FIRSTS</option>
+              <option>SPORTS</option>
+              <option>FAMILY</option>
+              <option>CHILDREN</option>
+              <option>BIRTHDAY</option>
+              <option>EDUCATION</option>
+              <option>CHILDHOOD</option>
+            </select>
+          </body>
+        </div>
+      
+
+
+        <div class="d">
+            <select id="categorySelect" size="1">
+                <option value="" disabled selected>Choose Security Question</option>
+            </select>
+        </div>
+              
+        <div class="center">
+          <input onkeyup="trigger()" id="a6"  type="text" style="text-align:center" placeholder="TYPE YOUR ANSWER HERE" required name="Answer" />
+            <div class="indicator">
+              <span class="weak"></span>
+              <span class="medium"></span>
+              <span class="strong"></span>
+            </div>
+            <div class="answer_text"></div>
+            
+            <br>
+
+            <input type="checkbox" id="clickme">
+              <label for="clickme" class="click-me">Need help?</label>
+
+            
+          <!--   <div class="center1">
+              <input type="checkbox" id="click">
+              <label for="click" class="click-me">Need help?</label>
+              <div class="content">
+                <div class="header">
+                  <h2>Answer Tips</h2>
+                  <label for="click" class="fa fa-times-circle"></label>
+                </div>
+                <p class="p1"><b>Mnemonics</b> is an approach that could be used to generate <i>strong</i> yet <i>memorable</i> text phrases. For example:</p>
+                <p class="p2">Question: What is your favorite sport?</p>
+                <p class="p2">Mnemonic based answer: CrickICC15@Aus</p>
+                <p class="p1">Explanation: My favorite sport is cricket, my favorite cricket team is Australia and they won the ICC world cup 2015.</p>
+                <div class="line"></div>
+                <label for="click" class="close-btn">Close</label>
+              </div>
+            </div> -->
+
+            <div class="bg-modal">
+              <div class="content-modal">
+                <div class="close">
+                  +
+                </div>
+                <h2><center>Answer Tips</center></h2>
+                <p class="p1"><b>Mnemonics</b> is an approach that could be used to generate <i>strong</i> yet <i>memorable</i> text phrases. For example:</p>
+                <p class="p2">Question: What is your favorite sport?</p>
+                <p class="p2">Mnemonic based answer: CrickICC15@Aus</p>
+                <p class="p1">Explanation: My favorite sport is cricket, my favorite cricket team is Australia and they won the ICC world cup 2015.</p>
+              </div>
+            </div>
+
+        </div>
+<!-- <center>*************************************************************</center>
+
+        <div class="center">
+          <input type="checkbox" id="click">
+          <label for="click" class="click-me">Click Me</label>
+          <div class="content">
+            <div class = "header">
+              <h2>Modal Popup</h2>
+              <label for="click" class="fas fa-times-circle"></label>
+            </div>
+            <label for="click" class="fas fa-check"></label>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <div class="line"></div>
+            <label for="clicl" class="close-btn">Close</label>
+          </div>
+        </div>
+
+ 
+        <br> -->
+
+        <div class="kd">
+          <!-- <button class="w3-button w3-white w3-section" onclick="returnText()">BEGIN EVALUTION</button> -->
+          <button class=button1 onclick="returnText()">BEGIN EVALUATION</button>
+        </div>
+
+        <div id="V">
+          <%= form.submit %>
+            <% end %>
+        </div>
+    
+    <script>
+      var x = document.getElementById("V");
+      x.style.display =  "none";
+    </script>      
+
+    <div>
+      <script type="text/javascript" style="text-align:center">
+ 
+        var subcategory = {
+          WORK: ["In what town was your first job?", "What was the name of the company where you had you first job?"],
+          FIRSTS: ["What is the first name of the boy or girl that you first kissed?", "Where were you when you had your first kiss?", "What was the make and the model of your first car?"],
+          SPORTS: ["What was your favorite sport in high school?"],
+          FAMILY: ["In what city does your nearest sibling live?", "In what city or town did your mother and father meet?"],
+          CHILDREN: ["What is the middle name of your youngest child?"],
+          BIRTHDAY: ["What is your oldest sibling’s birthday month and year? (e.g., January 1900)", "What is your youngest brother’s birthday month and year? (e.g., January 1900)"],
+          EDUCATION: ["What school did you attend for sixth grade?", "What was the last name of your third grade teacher?", "What is the name of a college you applied to but didn't attend?"],
+          CHILDHOOD: ["What was your childhood nickname?", "What is the name of your favorite childhood friend?", "What street did you live on in third grade?", "What was your childhood phone number including area code? (e.g., 000-000-0000)", "What was the name of your first stuffed animal?"],
+
+        }
+
+
+      function makeSubmenu(value) {
+          if (value.length == 0) document.getElementById("categorySelect").innerHTML = "<option></option>";
+          else {
+              var citiesOptions = "";
+              for (categoryId in subcategory[value]) {
+                  citiesOptions += "<option>" + subcategory[value][categoryId] + "</option>";
+              }
+              document.getElementById("categorySelect").innerHTML = citiesOptions;
+          }
+      }
+
+
+      function resetSelection() {
+          document.getElementById("category").selectedIndex = 0;
+          document.getElementById("categorySelect").selectedIndex = 0;
+      }
+
+          // document.getElementById("a6").onkeyup = function(){trigger()};
+          const indicator = document.querySelector(".indicator");
+          const input = document.querySelector("input");
+          const weak = document.querySelector(".weak");
+          const medium = document.querySelector(".medium");
+          const strong = document.querySelector(".strong");
+          const answer_text = document.querySelector(".answer_text");
+
+          let regExpWeak = /[a-z]/; 
+          let regExpMedium = /\d+/; // one or more digits.
+          let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+
+          function trigger(){
+          if(document.getElementById("a6") != ""){
+          indicator.style.display = "block";
+          indicator.style.display = "flex";
+            if(document.getElementById("a6").value.length <= 3 && (document.getElementById("a6").value.match(regExpWeak) || document.getElementById("a6").value.match(regExpMedium) || document.getElementById("a6").value.match(regExpStrong)))no=1;
+            if(document.getElementById("a6").value.length >= 6 && (document.getElementById("a6").value.match(regExpWeak) && document.getElementById("a6").value.match(regExpMedium)) || (document.getElementById("a6").value.match(regExpMedium) && document.getElementById("a6").value.match(regExpStrong)) || (document.getElementById("a6").value.match(regExpWeak) && document.getElementById("a6").value.match(regExpStrong)))no=2;
+            if(document.getElementById("a6").value.length >= 6 && document.getElementById("a6").value.match(regExpWeak) && document.getElementById("a6").value.match(regExpMedium) && document.getElementById("a6").value.match(regExpStrong))no=3;
+            
+            if(no == 1){
+              weak.classList.add("active");
+              answer_text.style.display = "block";
+               answer_text.textContent = "Your answer is easily guessable. Try mixing letters with numbers";
+              // answer_text.textContent = "Your answer is weak. Try mixing letters with numbers";
+              answer_text.classList.add("weak");
+              //alert("Your answer is weak. Try mixing letters with numbers");
+            }
+            
+            if(no == 2){
+              medium.classList.add("active");
+              answer_text.textContent = "Checkout the hints below for more help.";
+              answer_text.classList.add("medium");
+            }else{
+              medium.classList.remove("active");
+              answer_text.classList.remove("medium");
+            }
+          
+            if(no == 3){
+              medium.classList.add("active");
+              strong.classList.add("active");
+            answer_text.textContent = "Your answer is strong!";
+            answer_text.classList.add("strong");
+            }else{
+              strong.classList.remove("active");
+              answer_text.classList.remove("strong");
+            }
+
+          }else{
+            indicator.style.display = "none";
+            answer_text.style.display = "none";
+            }
+        }
+
+        function returnText() {
+        let input1 = document.getElementById("a1").value;
+        let input2 = document.getElementById("a2").value;
+        let input3 = document.getElementById("a3").value;
+        let input4 = document.getElementById("a4").value;
+        let input5 = document.getElementById("a5").value;
+        let input6 = document.getElementById("a6").value;
+        var country = document.getElementById("category").value;
+        var city = document.getElementById("categorySelect").value;
+        
+        localStorage.setItem("txtValue", input1);
+        localStorage.setItem("txtValue1", input2);
+        localStorage.setItem("txtValue2", input3);
+        localStorage.setItem("txtValue3", input4);
+        localStorage.setItem("txtValue4", input5);
+        localStorage.setItem("txtValue5", country);
+        localStorage.setItem("txtValue6", city);
+        localStorage.setItem("txtValue7", input6);
+      }
+
+      document.getElementById('clickme').addEventListener('click', function(){
+        document.querySelector('.bg-modal').style.display = 'flex';
+      });
+
+      document.querySelector('.close').addEventListener('click', function(){
+        document.querySelector('.bg-modal').style.display = 'none';
+      });
+
+      </script>
+    </div>
+  </body>
+</html>
+
+

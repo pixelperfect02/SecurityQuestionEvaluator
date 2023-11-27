@@ -1,0 +1,1050 @@
+<%
+=begin%>
+ 
+# <!DOCTYPE html>
+# <html>
+#   <head>
+#     <title>W3.CSS Template</title>
+#     <meta charset="UTF-8" />
+#     <meta name="viewport" content="width=device-width, initial-scale=1" />
+#     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+#     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+#     <style>
+#       body {
+#         font-family: "Times New Roman", Georgia, Serif;
+#       }
+
+#       h1,
+#       h2,
+#       h3,
+#       h4,
+#       h5,
+#       h6 {
+#         font-family: "Playfair Display";
+#         letter-spacing: 5px;
+#       }
+#     </style>
+#   </head>
+#   <body>
+#  <script type="text/javascript">
+#       function returnText()
+#       {
+#        let input1 = document.getElementById("a1").value;
+#        let input2 = document.getElementById("a2").value;
+#        let input3 = document.getElementById("a3").value;
+#        let input4 = document.getElementById("a4").value;
+#        let input6 = document.getElementById("a6").value;
+#        let input7 = document.getElementById("a7").value;
+#        let input8 = document.getElementById("a8").value;
+#       //  let input9 = document.getElementById("a9").value;
+#       //  let input10 = document.getElementByClassName("a10").value; "\n" + "Question Category: " + input9 + +  "\n" + "Question: " + input10  "\n" +
+#         var balance = 'Name: ' + input1  +  "\n" +"Surname: " + input2 +  "\n" + 'Birthday: ' + input3  +  "\n" + "Gender: " + input4 +  "\n" + "Social Media: " + input8 +  "\n" + "Profile URL: " + input6 +  "\n" +  "Answer: " + input7;
+#     alert(balance)
+# }
+# </script>
+#     <!-- Contact Section -->
+#     <div class="w3-container w3-padding-64">
+#       <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;"> 
+# 					 <br>
+#         <br>
+#         <style>
+#           .center {
+#             margin: auto;
+#             width: 30%;
+#             padding: 10px;
+#           }
+#           .cen {
+#   display: block;
+#   margin-left: 35%;
+#   margin-right: auto;
+#   width: 50%;
+# }
+#         </style>
+#         <div class = "cen">
+#  <div class="w3-col m6 w3-padding-large w3-hide-small"><%= image_tag "security_image.png", height: 200, width: 300 %> 
+#       </div>
+#        </div>
+#       <br>
+#       <br>
+#       <br>
+#       <br>
+#       <div class="right">
+#         <input type="text" id="a1" name="fname" placeholder="FIRST NAME" style="text-align:center">
+#         <input type="text" id="a2" name="fname" placeholder="LAST NAME" style="text-align:center">
+#       </div>
+#       <br>
+#       <br>
+#       <form action="/action_page.php">
+#         <label for="birthday">Birthday:</label>
+#         <input type="date" id="a3" name="birthday">
+#       </form>
+#       <br>
+#       <div class="center">
+#         <input type="text" id="a4" name="fname" placeholder="GENDER" style="text-align:center">
+#       </div>
+
+#       <div class="center">
+      
+#           <h6 style="text-align:center">SELECT SOCIAL MEDIA HANDLE </h6>
+#           <div class="w3-white w3-padding w3-card" style="letter-spacing:1px;">
+#             <%= image_tag "Insta.png", height:50, width: 60 %>
+#             <%= image_tag "Link.png", height:50, width: 130 %>
+#              <%= image_tag "google.png", height:50, width:100 %>
+
+#             <div class="w3-white w3-padding w3-card" style="letter-spacing:1px;">
+#               <input id="a8" type="checkbox" name="instagram">
+#               <label for="instagram">Instagram</label>
+#             </div>
+
+#             <div class="w3-white w3-padding w3-card" style="letter-spacing:1px;">
+#               <input type="checkbox"  name="linkedin" value="LinkedIn">
+#               <label for="linkedin">LinkedIn</label>
+#             </div>
+
+#               <div class="w3-white w3-padding w3-card" style="letter-spacing:1px;">
+#               <input type="checkbox" name="linkedin" value="Google">
+#               <label for="linkedin">Google</label>
+#             </div>
+
+#             </div>
+#         </div>
+#       <br>
+#     </div>
+#     <br>
+#     <br>
+#     <p>
+#     <input id="a6" class="w3-input w3-padding-16" type="text" placeholder="ENTER PROFILE URL/USERNAME OR NAME" required name="Name" style="text-align:center" />
+#     </p>
+#     <p></p>
+#     </form>
+#     </div>
+   
+#  <%
+# =begin%>
+#  <h6 style="text-align:center">OR</h6>  
+# <%
+# =end%>
+
+
+    
+#     <style>
+#       article,
+#       main,{
+#         border: 0 solid #000000;
+#         box-sizing: border-box;
+#         align-items: stretch;
+#         display: flex;
+#         flex-direction: column;
+#         flex-shrink: 0;
+#         margin: 0;
+#         padding: 0;
+#         position: relative;
+#         -webkit-box-align: stretch;
+#         -moz-box-align: stretch;
+#         -webkit-box-orient: vertical;
+#         -moz-box-orient: vertical;
+#         -webkit-box-direction: normal;
+#         -moz-box-direction: normal;
+#       }
+
+#       #root {
+#         z-index: 0;
+#       }
+
+#       .section-all {
+#         min-height: 100%;
+#         overflow: hidden;
+#       }
+
+#       .main {
+#         background-color: #fafafa;
+#         order: 4;
+#         flex-grow: 1;
+#         -webkit-box-flex: 1;
+#         -moz-box-flex: 1;
+#         -moz-box-ordinal-group: 5;
+#         -webkit-box-ordinal-group: 5;
+#       }
+
+#       .wrapper {
+#         min-height: 100%;
+#         overflow: hidden;
+#       }
+
+#       .wrapper,
+#       .article {
+#         flex-grow: 1;
+#         justify-content: center;
+#         -webkit-box-flex: 1;
+#         -moz-box-flex: 1;
+#         -webkit-box-pack: center;
+#         -moz-box-pack: center;
+#       }
+
+#       .article {
+#         flex-direction: row;
+#         margin: 0 auto;
+#         max-width: 935px;
+#         width: 100%;
+#         -webkit-box-orient: horizontal;
+#         -moz-box-orient: horizontal;
+#         -webkit-box-direction: normal;
+#         -moz-box-direction: normal;
+#       }
+
+#       .content {
+#         color: #262626;
+#         flex-grow: 1;
+#         justify-content: center;
+#         max-width: 350px;
+#         margin-top: 12px;
+#         -webkit-box-pack: justify;
+#         -moz-box-pack: justify;
+#         -webkit-box-flex: 1;
+#         -moz-box-flex: 1;
+#       }
+
+#       .login-box {
+#         background: #fff;
+#         border: 1px solid #e6e6e6;
+#         border-radius: 1px;
+#         margin: 0 0 10px;
+#         padding: 10px 0;
+#         /* align-items: center; */
+#       }
+
+#       .header {
+#         margin: 14.45px auto 12px;
+#       }
+
+#       .logo {
+#         background: cover no-repeat;
+#         width: 175px;
+#         height: auto;
+#       }
+
+#       .form {
+#         display: flex;
+#         flex-direction: column;
+#         margin-bottom: 10px;
+#         -moz-box-direction: normal;
+#         -webkit-box-direction: normal;
+#       }
+
+#       .input-box {
+#         margin: auto 40px 6px;
+#       }
+
+#       input {
+#         height: 36px;
+#         border: 1px solid #efefef;
+#         border-radius: 3px;
+#         background-color: #fafafa;
+#         width: 100%;
+#         font-size: 12px;
+#         margin: 0;
+#         padding: 9px 0 7px 8px;
+#         outline: none;
+#         overflow: hidden;
+#         text-overflow: ellipsis;
+#         box-sizing: border-box;
+#       }
+
+#       input#name:focus,
+#       input#password:focus {
+#         border-color: #bbb;
+#       }
+
+#       .button-box {
+#         display: block;
+#         position: relative;
+#         margin: 8px 40px;
+#       }
+
+#       .btn {
+#         cursor: pointer;
+#         width: 100%;
+#         padding: 0 8px;
+#         background: #3897f0;
+#         border: 1px solid #3897f0;
+#         color: #fff;
+#         border-radius: 3px;
+#         font-weight: 600;
+#         font-size: 14px;
+#         height: 28px;
+#         line-height: 26px;
+#         outline: none;
+#         white-space: nowrap;
+#       }
+
+#       .forgot,
+#       .forgot:active,
+#       .forgot:hover,
+#       .forgot:visited {
+#         font-size: 12px;
+#         margin-top: 12px;
+#         text-align: center;
+#         color: #003569;
+#         line-height: 14px !important;
+#       }
+
+#       .text {
+#         text-align: center;
+#         margin: 15px;
+#         color: #262626;
+#         font-size: 14px;
+#       }
+
+#       .text a,
+#       .text a:visited,
+#       .text a:hover,
+#       .text a:active {
+#         color: #3897f0;
+#         margin-left: 3px;
+#       }
+
+#       /* App Store */
+#       .app p {
+#         line-height: 18px;
+#         color: #262626;
+#         font-size: 14px;
+#         text-align: center;
+#         margin: 10px 20px;
+#       }
+
+#       .app-img {
+#         flex-direction: row;
+#         justify-content: center;
+#         margin: 10px 0;
+#         -webkit-box-orient: horizontal;
+#         -moz-box-orient: horizontal;
+#       }
+
+#       .app-img a {
+#         margin-right: 8px;
+#         height: 43.5px;
+#       }
+
+#       .app-img img {
+#         height: 40px;
+#       }
+
+#       /* FOOTER */
+#       .footer {
+#         background-color: #fafafa;
+#         order: 5;
+#         padding: 0 20px;
+#         background: #fafafa;
+#       }
+
+#       .footer-container {
+#         flex-direction: row;
+#         flex-wrap: wrap;
+#         background-color: #fafafa;
+#         justify-content: space-between;
+#         padding: 38px 0;
+#         max-width: 935px;
+#         font-size: 12px;
+#         font-weight: 600;
+#         margin: 0 auto;
+#         text-transform: uppercase;
+#         width: 100%
+#       }
+
+#       .footer-nav {
+#         max-width: 100%;
+#       }
+
+#       .footer-nav ul {
+#         margin-right: 16px;
+#         margin-bottom: 3px;
+#         flex-grow: 1;
+#       }
+
+#       .footer-nav ul li {
+#         display: inline-block;
+#         margin-right: 13px;
+#         margin-bottom: 7px;
+#       }
+
+#       .footer-nav ul li a {
+#         color: #003569;
+#         text-decoration: none;
+#       }
+
+#       .footer span {
+#         color: #999;
+#       }
+
+#       span.language {
+#         color: #003569;
+#         cursor: pointer;
+#         display: inline-block;
+#         font-weight: 600;
+#         position: relative;
+#         text-transform: uppercase;
+#         vertical-align: top;
+#       }
+
+#       .select {
+#         cursor: pointer;
+#         height: 100%;
+#         top: 0;
+#         opacity: 0;
+#         position: absolute;
+#         left: 0;
+#         width: 100%;
+#       }
+
+#       /* Media Queries */
+#       @media (max-width:450px) {
+#         .main {
+#           background-color: #fff;
+#         }
+
+#         .content {
+#           max-width: 100%;
+#           margin-top: 0;
+#           justify-content: space-between;
+#         }
+
+#         .login-box {
+#           background-color: transparent;
+#           border: none;
+#         }
+
+#         .logo {
+#           background: cover no-repeat;
+#           width: 175px;
+#           height: auto;
+#           margin: 0 auto;
+#         }
+
+#         .btn {
+#           cursor: pointer;
+#           width: 100%;
+#           padding: 0 8px;
+#           background: #3897f0;
+#           border: 1px solid #3897f0;
+#           color: #fff;
+#           border-radius: 3px;
+#           font-weight: 600;
+#           font-size: 14px;
+#           height: 28px;
+#           line-height: 26px;
+#           outline: none;
+#           white-space: nowrap;
+#         }
+
+#         .input-box {
+#           border: 1px solid #efefef;
+#           border-radius: 3px;
+#           height: 36px;
+#           background: #fafafa;
+#           position: relative;
+#         }
+
+#         input {
+#           border: 0;
+#           background-color: #fafafa;
+#           width: 100%;
+#           font-size: 12px;
+#           margin: 0;
+#           padding: 9px 0 7px 8px;
+#           outline: none;
+#           overflow: hidden;
+#           text-overflow: ellipsis;
+#           box-sizing: border-box;
+#         }
+
+#         .input-box:hover,
+#         .input-box:focus {
+#           border-color: #bbb;
+#         }
+#       }
+
+#       @media only screen and (max-width:875px) {
+#         .footer-container {
+#           text-align: center;
+#           padding: 10px 0;
+#         }
+
+#         .footer-container,
+#         .footer-nav ul {
+#           justify-content: center;
+#           margin: 0 auto;
+#           max-width: 360px;
+#           min-width: auto;
+#           -webkit-box-pack: center;
+#           -moz-box-pack: center;
+#         }
+#       }
+#     </style>
+#         <!--   <div class="w3-container w3-padding-64">
+#               <h6 style="text-align:center">SELECT A CATEGORY FOR YOUR QUESTION</h6>
+#                     <div class="w3-white w3-padding w3-card" style="letter-spacing:1px;">
+#                     </div>
+#               <form action="/action_page.php">
+#               <div class="container">
+#                   <div class="field">
+#                     <p class="control">
+#                       <style>
+#                         .tmid {
+#                           margin: auto;
+#                           width: 46%;
+#                           /* border: 3px solid white;  */
+#                           padding: 15px;
+#                         }
+#                       </style>
+#                     <div class="field">
+#                       <label :category_name><br>
+#                       <select(:category_name, ApplicationRecord:category_list)>
+#                     </div>
+#                     </p>
+#                   </div>
+#                 </div>
+#               </form>
+#           </div> -->
+
+#           <div class="w3-container w3-padding-64">
+#               <h6 style="text-align:center">SELECT A CATEGORY FOR YOUR QUESTION</h6>
+#                     <div class="w3-white w3-padding w3-card" style="letter-spacing:1px;">
+#               <form action="/action_page.php">
+#                 <div class="container">
+#                   <div class="field">
+#                     <p class="control">
+#                       <style>
+#                         .tmid {
+#                           margin: auto;
+#                           width: 46%;
+#                           /* border: 3px solid white;  */
+#                           padding: 15px;
+#                         }
+#                       </style>
+#                     <div class="tmid">
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check1" value="Childhood" onclick="selectOnlyThis(this.id);myA();" /> CHILDHOOD <p id="text" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="chi1" value="Value2" onclick="selectThisonlya(this.id)" /> What was your childhood nickname? </label>
+#                           <br>
+#                           <br>
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="chi2" value="Value2" onclick="selectThisonlya(this.id)" /> What was the name of your first stuffed animal? </label>
+#                           <br>
+#                           <br>
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="chi3" value="Value2" onclick="selectThisonlya(this.id)" /> Who was your childhood hero? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlya(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("chi" + j === id && document.getElementById("chi" + j).checked === true) {
+#                                   document.getElementById("chi" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("chi" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myA() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check1");
+#                           // Get the output text
+#                           var text = document.getElementById("text");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check2" onclick="selectOnlyThis(this.id); myD();" /> SPORTS <p id="texta" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="spo1" onclick="selectThisonlyd(this.id)" /> What was your favorite sport in high school? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlyd(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("spo1" + j === id && document.getElementById("spo1" + j).checked === true) {
+#                                   document.getElementById("spo1" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("spo1" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myD() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check2");
+#                           // Get the output text
+#                           var text = document.getElementById("texta");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check3" value="Value1" onclick="selectOnlyThis(this.id);myC();" /> BIRTHDAY <p id="textb" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="bir1" onclick="selectThisonlyc(this.id)" /> What is your oldest sibling’s birthday month and year? (e.g., January 1900) </label>
+#                           <br>
+#                           <br>
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="bir2" onclick="selectThisonlyc(this.id)" /> What is your youngest brother’s birthday month and year? (e.g., January 1900) </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlyc(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("bir" + j === id && document.getElementById("bir" + j).checked === true) {
+#                                   document.getElementById("bir" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("bir" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myC() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check3");
+#                           // Get the output text
+#                           var text = document.getElementById("textb");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check4" value="Value1" onclick="selectOnlyThis(this.id); myB();" /> FAMILY <p id="t" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="fam1" value="Value2" onclick="selectThisonlyb(this.id)" /> In what city or town did your mother and father meet? </label>
+#                           <br>
+#                           <br>
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="fam2" value="Value2" onclick="selectThisonlyb(this.id)" /> What is your oldest sibling's middle name? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlyb(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("fam" + j === id && document.getElementById("fam" + j).checked === true) {
+#                                   document.getElementById("fam" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("fam" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myB() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check4");
+#                           // Get the output text
+#                           var text = document.getElementById("t");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check5" onclick="selectOnlyThis(this.id); myE();" /> AUTOMOBILE <p id="texte" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="aut1" onclick="selectThisonlye(this.id)" /> What is the license plate (registration) of your dad's first car? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlye(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("aut" + j === id && document.getElementById("aut" + j).checked === true) {
+#                                   document.getElementById("aut" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("aut" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myE() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check5");
+#                           // Get the output text
+#                           var text = document.getElementById("texte");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check6" value="Value1" onclick="selectOnlyThis(this.id); myF();" /> EDUCATION <p id="textf" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="edu1" onclick="selectThisonlyf(this.id)" /> What school did you attend for sixth grade? </label>
+#                           <br>
+#                           <br>
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="shf2" onclick="selectThisonlyf(this.id)" /> What was the name of your elementary / primary school? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlyf(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("edu" + j === id && document.getElementById("edu" + j).checked === true) {
+#                                   document.getElementById("edu" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("edu" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myF() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check6");
+#                           // Get the output text
+#                           var text = document.getElementById("textf");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check7" value="Value1" onclick="selectOnlyThis(this.id);myG();" /> CHILDREN <p id="textg" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="child1" onclick="selectThisonlyg(this.id)" /> What is the middle name of your youngest child? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlyg(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("child" + j === id && document.getElementById("child" + j).checked === true) {
+#                                   document.getElementById("child" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("child" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myG() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check7");
+#                           // Get the output text
+#                           var text = document.getElementById("textg");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check8" value="Value1" onclick="selectOnlyThis(this.id); myH();" /> EMPLOYMENT <p id="texth" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="emp1" onclick="selectThisonlyh(this.id)" /> In what city or town was your first job? </label>
+#                           <br>
+#                           <br>
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="emp2" onclick="selectThisonlyh(this.id)" /> What is the name of the company of your first job? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlyh(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("emp" + j === id && document.getElementById("emp" + j).checked === true) {
+#                                   document.getElementById("emp" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("emp" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myH() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check8");
+#                           // Get the output text
+#                           var text = document.getElementById("texth");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check9" value="Value1" onclick="selectOnlyThis(this.id); myI();" /> SIGNIFICANT OTHER <p id="texti" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="sig1" onclick="selectThisonlyi(this.id)" /> In what city did you meet your spouse/significant other? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonlyi(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("sig" + j === id && document.getElementById("sig" + j).checked === true) {
+#                                   document.getElementById("sig" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("sig" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myI() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check9");
+#                           // Get the output text
+#                           var text = document.getElementById("texti");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       <label class="checkbox">
+#                         <input type="checkbox" id="Check10" value="Value1" onclick="selectOnlyThis(this.id); myJ();" /> PETS <p id="textj" style="display:none">
+#                           <label class="checkbox">
+#                             <input type="checkbox" id="pet1" onclick="selectThisonly(this.id)" /> What is the name of your first pet? </label>
+#                           <br>
+#                           <br>
+#                           <script>
+#                             function selectThisonly(id) {
+#                               for (var j = 1; j <= 10; j++) {
+#                                 if ("pet" + j === id && document.getElementById("pet" + j).checked === true) {
+#                                   document.getElementById("pet" + j).checked = true;
+#                                 } else {
+#                                   document.getElementById("pet" + j).checked = false;
+#                                 }
+#                               }
+#                             }
+#                           </script>
+#                       </label>
+#                       </p>
+#                       <script>
+#                         function myJ() {
+#                           // Get the checkbox
+#                           var checkBox = document.getElementById("Check10");
+#                           // Get the output text
+#                           var text = document.getElementById("textj");
+#                           // If the checkbox is checked, display the output text
+#                           if (checkBox.checked == true) {
+#                             text.style.display = "block";
+#                           } else {
+#                             text.style.display = "none";
+#                           }
+#                         }
+#                       </script>
+#                       </label>
+#                       <br>
+#                       </p>
+#                     </div>
+#                   </div>
+#                   <br>
+#                 </div>
+#             </div>
+#           </div>
+#           </form>
+#           <script>
+#             function selectOnlyThis(id) {
+#               for (var i = 1; i <= 10; i++) {
+#                 if ("Check" + i === id && document.getElementById("Check" + i).checked === true) {
+#                   document.getElementById("Check" + i).checked = true;
+#                 } else {
+#                   document.getElementById("Check" + i).checked = false;
+#                 }
+#               }
+#             }
+#           </script>
+#           <style>
+#             .mid {
+#               margin: auto;
+#               width: 10%;
+#               /* border: 3px solid white;  */
+#             }
+#           </style>
+
+#            <p>
+#               <input maxlength="10" id="a7" minlength="3" class="w3-input w3-padding-40" type="text" style="text-align:center" placeholder="TYPE YOUR ANSWER FOR THE SELECTED QUESTION HERE" required name="Answer" />
+#             </p>
+#           <div class="mid">
+#             <button class="w3-button w3-white w3-section" onclick="returnText(); myFunction();">SUBMIT</button>
+#           </div>
+          
+#           <hr />
+
+#           <div id="myDIV" style="display: none">
+           
+#             <style>
+#               .buttonload {
+#                 width: 100%;
+#                 border: 3px grey;
+#                 padding: 10px;
+#                 background-color: white;
+#                 color: black;
+#                 padding: 2px 5px;
+#                 font-size: 20px
+#                   /* Set a font size */
+#               }
+#             </style>
+#             <button class="buttonload">
+#               <a href="http://localhost:3000/home/result">
+#                 <i class="fa fa-spinner fa-spin"></i>
+#                 <br> EVALUATING </button>
+#             </a>
+#             <br>
+#             <br>
+#             <div class="w3-light-grey w3-round">
+#               <div class="w3-container w3-round w3-grey" style="width:15%">25%</div>
+#             </div>
+#             <br>
+#             <br>
+#           </div>
+#           </div>
+#           </div>
+#           </form>
+#           </div>
+#           <script>
+#             function myFunction() {
+#               var x = document.getElementById("myDIV");
+#               if (x.value == "Yes") {
+#                 x.style.display = "block";
+#                 x.value = "No";
+#               } else {
+#                 x.style.display = "none";
+#                  x.value = "Yes";
+#               }
+#             }
+#           </script>
+          
+#   </body>
+# </html> 
+<%
+=end%>
+
+
+
+
+
+
+
+
+<%
+=begin%>
+ <style>
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+</style>
+
+  <div class = "tmid">
+<div class="container">                                        
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">CATEGORY
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li class="dropdown-submenu">
+        <a class="test">SPORTS <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a>2nd level dropdown</a></li>
+          <li><a>2nd level dropdown</a></li>
+        </ul>
+      </li>
+     
+      <li class="dropdown-submenu">
+        <a class="test">FAMILY<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a>2nd level dropdown</a></li>
+          <li><a>2nd level dropdown</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown-submenu">
+        <a class="test">BIRTHDAY <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a>2nd level dropdown</a></li>
+          <li><a>2nd level dropdown</a></li>
+        </ul>
+      </li>
+    </ul>
+      
+  </div>
+</div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script> 
+<%
+=end%>

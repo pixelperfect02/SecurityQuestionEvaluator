@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+      body {
+        font-family: "Times New Roman", Georgia, Serif;
+        /*font-family: Arial, Helvetica, sans-serif;*/
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Playfair Display", sans-serif;
+        /*font-family: "Playfair Display";*/
+        /*font-family: Arial, Helvetica, sans-serif;*/
+        /*letter-spacing: 5px;*/
+      }
+
+      .heading1{
+        /*font-family: "Raleway", sans-serif;*/
+        font-family: "Karma", sans-serif;
+        font-weight: bold;
+        font-size: 150%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Contact Section -->
+    <div class="w3-container w3-padding-64">
+      <div class="w3-bar w3-border w3-light-grey w3-padding w3-card" style="letter-spacing:0.5px;"> 
+      <!-- <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">  -->
+      <!-- <div class="w3-bar w3-white w3-padding w3-card" style="text-indent: 40px;">    -->
+      <!-- <h6>USER DETAILS:<h6> -->
+        <p class="heading1"> USER DETAILS </p>
+          <strong>Name:</strong> <span id="data"></span><br> 
+          <strong>Surname:</strong> <span id="data1"> </span><br>
+          <strong>Date of Birth:</strong> <span id="data2"></span><br>
+          <strong>Gender:</strong> <span id="data3"></span><br>
+          <strong>Profile URL:</strong> <span id="data4"></span><br> 
+          <strong>Chosen Category:</strong> <span id="data5"></span><br>
+          <strong>Chosen Security Question:</strong> <span id="data6" style="color:#800000;font-weight:bold;"></span><br>
+          <strong>Answer:</strong> <span id="data7" style="color:#800000;font-weight:bold"></span><br>
+      </div>
+    </div>
+
+
+  <div class="w3-container">
+    <div class="w3-bar w3-border w3-white w3-padding w3-card" style="letter-spacing:0.5px;">
+
+      <p><strong> EVALUATION CHECK :</strong></p> <span id="data8"></span>
+
+
+      <p><strong> RESULT (SIMPLIFIED) :</strong></p> <span id="data10"></span>
+        
+        <br>
+        <span id="data9"></span>
+
+
+          <script>
+
+            document.getElementById("data").innerHTML=localStorage.getItem("txtValue");
+            document.getElementById("data1").innerHTML=localStorage.getItem("txtValue1");
+            document.getElementById("data2").innerHTML=localStorage.getItem("txtValue2");
+            document.getElementById("data3").innerHTML=localStorage.getItem("txtValue3");
+            document.getElementById("data4").innerHTML=localStorage.getItem("txtValue4");
+            document.getElementById("data5").innerHTML=localStorage.getItem("txtValue5");
+            document.getElementById("data6").innerHTML=localStorage.getItem("txtValue6");
+            document.getElementById("data7").innerHTML=localStorage.getItem("txtValue7");
+
+           function similarity(s1, s2) {
+            var longer = s1;
+            var shorter = s2;
+            if (s1.length < s2.length) {
+              longer = s2;
+              shorter = s1;
+            }
+            var longerLength = longer.length;
+            if (longerLength === 0) {
+              return 1.0;
+            }
+            return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+          }
+
+          function editDistance(s1, s2) {
+            s1 = s1.toLowerCase();
+            s2 = s2.toLowerCase();
+
+            var costs = new Array();
+            for (var i = 0; i <= s1.length; i++) {
+              var lastValue = i;
+              for (var j = 0; j <= s2.length; j++) {
+                if (i == 0)
+                  costs[j] = j;
+                else {
+                  if (j > 0) {
+                    var newValue = costs[j - 1];
+                    if (s1.charAt(i - 1) != s2.charAt(j - 1))
+                      newValue = Math.min(Math.min(newValue, lastValue),
+                        costs[j]) + 1;
+                    costs[j - 1] = lastValue;
+                    lastValue = newValue;
+                  }
+                }
+              }
+              if (i > 0)
+                costs[s2.length] = lastValue;
+            }
+            return costs[s2.length];
+          }
+
+
+
+            var $str1=localStorage.getItem("txtValue7");
+            var $str2=localStorage.getItem("sc");
+
+            var perc=Math.round(similarity($str1,$str2)*10000)/100;
+
+            document.getElementById("data8").innerHTML="The strings: <span class=\"str\">'"+$str1+"'</span> in gathered data: <br> <span class=\"str\">'"+$str2+"'</span> ";
+            //<br>are similar <span class=\"perc\">"+perc+"%</span>
+            // document.getElementById("data8").innerHTML="The results showed the match of "+perc+" between the exported data and security question and answer.Therefore, we can say the selected security question and answer is ";
+
+
+            if(perc >= 80) {
+              document.getElementById("data9").innerHTML= "<span class=\"perc\">"+perc+"%</span> possibility of a match - a very high match has been found please select another question and answer";
+            }
+            else if( perc>=51 && perc<=79)
+            {
+              document.getElementById("data9").innerHTML="<span class=\"perc\">"+perc+"%</span> possibility of a match - it is worth choosing another question";
+            }
+            else{
+              document.getElementById("data9").innerHTML= "<span class=\"perc\">"+perc+"%</span> possibility of a match - the security question and answer is safe to use";
+            }
+
+          </script>
+    
+    <br>
+    <br>
+    <br>
+
+     <input type="hidden" id = "a" value= "<%=@abc%>">
+
+    <br>
+    <br>
+    <br>
+
+<script>
+let exdata= document.getElementById("a").value;
+ localStorage.setItem("sc", exdata);
+function removeTags(str) {
+    if ((str===null) || (str===''))
+        return false;
+    else
+        str = str.toString();
+
+    //-- remove BR tags and replace them with line break
+    str=str.replace(/<br>/gi, "\n");
+    str=str.replace(/<br\s\/>/gi, "\n");
+    str=str.replace(/<br\/>/gi, "\n");
+
+    //-- remove P and A tags but preserve what's inside of them
+    str=str.replace(/<p.*>/gi, "\n");
+    str=str.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 ($1)");
+
+    //-- remove all inside SCRIPT and STYLE tags
+    str=str.replace(/<script.*>[\w\W]{1,}(.*?)[\w\W]{1,}<\/script>/gi, "");
+    str=str.replace(/<style.*>[\w\W]{1,}(.*?)[\w\W]{1,}<\/style>/gi, "");
+    //-- remove all else
+    str=str.replace(/<(?:.|\s)*?>/g, "");
+
+    //-- get rid of more than 2 multiple line breaks:
+    str=str.replace(/(?:(?:\r\n|\r|\n)\s*){2,}/gim, "\n\n");
+
+    //-- get rid of more than 2 spaces:
+    str = str.replace(/ +(?= )/g,'');
+
+    //-- get rid of html-encoded characters:
+    str=str.replace(/&nbsp;/gi," ");
+    str=str.replace(/&amp;/gi,"&");
+    str=str.replace(/&quot;/gi,'"');
+    str=str.replace(/&lt;/gi,'<');
+    str=str.replace(/&gt;/gi,'>');
+return str;
+}
+    //-- return
+ removeTags(localStorage.getItem("sc"));
+
+
+</script>
+
+
+<script>
+
+
+  //KMP
+    function computeLPSArray(pat, M, lps)
+    {
+        // length of the previous longest prefix suffix
+        var len = 0;
+        var i = 1;
+        lps[0] = 0; // lps[0] is always 0
+
+        // the loop calculates lps[i] for i = 1 to M-1
+        while (i < M) {
+            if (pat.charAt(i) == pat.charAt(len)) {
+                len++;
+                lps[i] = len;
+                i++;
+            }
+            else // (pat[i] != pat[len])
+            {
+                // This is tricky. Consider the example.
+                // AAACAAAA and i = 7. The idea is similar
+                // to search step.
+                if (len != 0) {
+                    len = lps[len - 1];
+
+                    // Also, note that we do not increment
+                    // i here
+                }
+                else // if (len == 0)
+                {
+                    lps[i] = len;
+                    i++;
+                }
+            }
+        }
+    }
+
+    function KMPSearch(pat,txt)
+    {
+        var M = pat.length;
+        var N = txt.length;
+
+        // create lps[] that will hold the longest
+        // prefix suffix values for pattern
+        var lps = [];
+        var j = 0; // index for pat[]
+
+        // Preprocess the pattern (calculate lps[]
+        // array)
+        computeLPSArray(pat, M, lps);
+
+        var i = 0; // index for txt[]
+        while ((N - i) >= (M - j)) {
+            if (pat.charAt(j) == txt.charAt(i)) {
+                j++;
+                i++;
+            }
+            if (j == M) {
+                //document.write("Found pattern " + "at index " + (i - j) + "\n");
+                document.getElementById("data10").innerHTML = "Bad - Pattern found at index" + (i - j) + "\n";
+                j = lps[j - 1];
+                break;
+            }
+
+            // mismatch after j matches
+            else if (i < N && pat.charAt(j) != txt.charAt(i)) {
+                // Do not match lps[0..lps[j-1]] characters,
+                // they will match anyway
+                if (j != 0)
+                    j = lps[j - 1];
+                else
+                    i = i + 1;
+            }
+
+        }
+
+        document.getElementById("data10").innerHTML = "Good - Pattern not Found";
+    }
+
+
+  var txt = localStorage.getItem("sc");
+  var pat = localStorage.getItem("txtValue7");
+
+
+  KMPSearch(pat, txt);
+
+
+
+</script>
+</div>
+</div>
+</body>
+</html>

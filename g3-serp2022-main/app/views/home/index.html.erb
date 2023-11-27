@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+      body {
+        font-family: "Times New Roman", Georgia, Serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Playfair Display";
+        letter-spacing: 5px;
+      }
+      video {
+         object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+      }
+  .video-wrapper {
+  border: 2px solid #000;
+  /* width: 400px;
+  height: 200px; */
+  /* position: relative; */
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header{
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+    </style>
+  </head>
+  <body>
+  <div class="video-wrapper">
+  <video playsinline autoplay muted loop poster="cake.jpg">
+    <source src="https://res.cloudinary.com/du7h0crts/video/upload/v1660781728/video_xbeqfk.mp4" type="video/webm">
+  </video>
+    <div class="header">
+     <br>
+        <br>
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <h1>WELCOME TO SQE </h1>
+    <button> <a href="http://localhost:3000/home/evform">
+          <span class="w3-right w3-padding-large w3-white w3-xlarge w3-wide w3-bar-item w3-button "> EVALUATE PASSWORD <span class="w3-hide-small"> SECURITY</span> QUESTION </span>
+        </a></button>
+  </div>
+</div>
+<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:1px;">
+      <p style="font-family:'georgia'"> The SECURITY QUESTION EVALUATOR (SQE) is one implementation of an authentication which are used to validate an individual’s identity on a password protected network. The answer to the security questions is the information that only a user is familiar with and is unknown to others. A good security question can have numerous possible answers which are easy to remember and hard to guess, it should be simple and not change overtime. This application is an assessor that examines good security questions and responses. <br>
+        <br> One implementation of an authentication which are used to validate an individual’s identity on a password protected network. The answer to the security questions is the information that only a user is familiar with and is unknown to others. <br>
+        <br> For any doubts or queries, please contact us by filling the form below:
+      </p>
+    </div>
+    <hr>
+    <!-- Contact Section -->
+    <div class="w3-container w3-padding-34" id="contact">
+    
+      <h1>Contact Us</h1>
+      <p>Ask for expert advice related to security question and answers.</p>
+      <form>
+        <p>
+          <input class="w3-input w3-padding-16" id= "a1" type="text" placeholder="Full Name" required name="Name">
+        </p>
+        <p>
+          <input class="w3-input w3-padding-16" id= "a2" type="text" placeholder="Email" required name="People">
+        </p>
+        <p>
+          <input class="w3-input w3-padding-16" id= "a3" type="datetime-local" placeholder="Today's Date and Time" required name="date" value="2020-11-16T20:00">
+        </p>
+        <p>
+          <input class="w3-input w3-padding-16" id= "a4" type="text" placeholder="Type your doubt here" required name="Message">
+        </p>
+        <p>
+          <button  id="submitForm" class="w3-button w3-light-grey w3-section">SEND MESSAGE</button>
+        </p>
+      </form>
+
+     <script>
+
+      $("#submitForm").click(function() {
+      alert("We have received your message.");
+   });
+</script>
+
+
+    </div>
+    </div>
+  </body>
+</html>
